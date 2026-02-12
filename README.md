@@ -16,3 +16,18 @@ A personal CV built on top of [posquit0/Awesome-CV](https://github.com/posquit0/
 | `make clean`            | Removes build artifacts (`.pdf`, `.aux`, `.log`, `.out`, `.fls`, `.fdb_latexmk`) inside the container.                                                       |
 | `make docker-shell`     | Drops you into an interactive shell in the container at `/workdir` with your repo mounted — handy for debugging fonts or TeX paths.                          |
 | `make docker-build`     | Pulls the latest `texlive/texlive` Docker image.                                                                                                             |
+
+## Environment Variables
+
+Sensitive personal information is injected at build time via environment variables, keeping it out of the repository.
+
+| Variable   | Description   | Fallback default  |
+| ---------- | ------------- | ----------------- |
+| `CV_EMAIL` | Email address | `me@paoloboi.com` |
+| `CV_PHONE` | Phone number  | `000-0000000`     |
+
+```bash
+CV_EMAIL="me@example.com" CV_PHONE="000-0000000" make
+```
+
+If the variables are not set, the fallback defaults shown above are used.

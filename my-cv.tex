@@ -1,10 +1,24 @@
 \documentclass[11pt,a4paper,sans]{posquit0/Awesome-CV/awesome-cv}
-\usepackage{awesome-cv-class-overrides}  % Your customizations
+\usepackage{awesome-cv-class-overrides} % Custom overrides for the awesome-cv class (see that file for details)
 
-\name{Your}{Name}
+% Configuration
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Color for highlights
+% See awesome-cv.cls for more color options, or define your own here
+\colorlet{awesome}{awesome-red}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% Personal Information
+\name{Paolo}{Boi}
 \position{Software Engineer}
-\email{your.email@example.com}
-% ... personal info ...
+\email{\fromenv{CV_EMAIL}{me@paoloboi.com}}
+\linkedin{paoloboi}
+\github{boi-wan}
+\stackoverflow{3244998}{thepaoloboi}
+\whatsapp{\fromenv{CV_PHONE}{(+39) 000-0000000}}
 
 \begin{document}
 \makecvheader

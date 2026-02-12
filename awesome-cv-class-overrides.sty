@@ -1,4 +1,18 @@
 \ProvidesPackage{awesome-cv-class-overrides}
 
-% Fonts are now installed as system fonts in the Docker container (see Makefile).
-% No font path overrides needed — awesome-cv.cls will find them automatically.
+% ── Read environment variables with a fallback default ──────────────────────
+% Usage: \fromenv{ENV_VAR_NAME}{fallback value}
+% Requires --shell-escape (set in the Makefile).
+\ExplSyntaxOn
+\NewDocumentCommand{\fromenv}{mm}{
+  \sys_get_shell:nnN { kpsewhich~--var-value~ #1 } {} \l_tmpa_tl
+  \tl_trim_spaces:N \l_tmpa_tl
+  \tl_if_empty:NTF \l_tmpa_tl {#2} {\l_tmpa_tl}
+}
+\ExplSyntaxOff
+
+% Change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% \newcommand{\downlink}[1]{\href{#1}{\faDownload}}
+

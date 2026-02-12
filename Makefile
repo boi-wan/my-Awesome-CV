@@ -4,8 +4,8 @@
 TEX := my-cv.tex
 PDF := $(TEX:.tex=.pdf)
 
-# XeLaTeX command
-CC := xelatex -halt-on-error -interaction=nonstopmode
+# XeLaTeX command (--shell-escape is needed to read env vars in LaTeX)
+CC := xelatex -halt-on-error -interaction=nonstopmode --shell-escape
 
 # Docker image
 DOCKER_IMAGE := texlive/texlive:latest
@@ -26,6 +26,8 @@ init-submodules:
 cv.pdf:
 ifdef USE_DOCKER
 	docker run --rm \
+	  -e CV_EMAIL="$$CV_EMAIL" \
+	  -e CV_PHONE="$$CV_PHONE" \
 	  -v $$PWD:$(WORKDIR) \
 	  -w $(WORKDIR) \
 	  $(DOCKER_IMAGE) \
