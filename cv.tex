@@ -11,14 +11,17 @@
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
 
-% Personal Information
+% Personal Information (email & phone are read from env vars; see README)
+\setfromenv{\myemail}{CV_EMAIL}{me@example.com}
+\setfromenv{\myphone}{CV_PHONE}{(+39) 000-0000000}
+
 \name{Paolo}{Boi}
 \position{Software Engineer}
-\email{\fromenv{CV_EMAIL}{me@paoloboi.com}}
+\email{\myemail}
 \linkedin{paoloboi}
 \github{boi-wan}
 \stackoverflow{3244998}{thepaoloboi}
-\whatsapp{\fromenv{CV_PHONE}{(+39) 000-0000000}}
+\whatsapp{\myphone}
 
 \begin{document}
 \makecvheader

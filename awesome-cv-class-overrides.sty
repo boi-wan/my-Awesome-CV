@@ -1,13 +1,17 @@
 \ProvidesPackage{awesome-cv-class-overrides}
 
 % ── Read environment variables with a fallback default ──────────────────────
-% Usage: \fromenv{ENV_VAR_NAME}{fallback value}
+% Usage: \setfromenv{\cmd}{ENV_VAR_NAME}{fallback value}
+% Defines \cmd to the value of $ENV_VAR_NAME, or to the fallback if unset.
 % Requires --shell-escape (set in the Makefile).
 \ExplSyntaxOn
-\NewDocumentCommand{\fromenv}{mm}{
-  \sys_get_shell:nnN { kpsewhich~--var-value~ #1 } {} \l_tmpa_tl
+\NewDocumentCommand{\setfromenv}{mmm}{
+  \sys_get_shell:nnN { kpsewhich~--var-value~ #2 } {} \l_tmpa_tl
   \tl_trim_spaces:N \l_tmpa_tl
-  \tl_if_empty:NTF \l_tmpa_tl {#2} {\l_tmpa_tl}
+  \tl_if_empty:NTF \l_tmpa_tl
+    { \tl_set:Nn \l_tmpa_tl {#3} }
+    { }
+  \cs_set:Npx #1 { \tl_use:N \l_tmpa_tl }
 }
 \ExplSyntaxOff
 

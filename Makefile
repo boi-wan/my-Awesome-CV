@@ -1,7 +1,7 @@
 .PHONY: all init-submodules clean docker-build docker-shell cv.pdf
 
 # Main document
-TEX := my-cv.tex
+TEX := cv.tex
 PDF := $(TEX:.tex=.pdf)
 
 # XeLaTeX command (--shell-escape is needed to read env vars in LaTeX)
