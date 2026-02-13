@@ -1,0 +1,1 @@
+posquit0/Awesome-CV/awesome-cv.cls

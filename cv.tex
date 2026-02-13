@@ -1,5 +1,10 @@
-\documentclass[11pt,a4paper,sans]{posquit0/Awesome-CV/awesome-cv}
+\documentclass[11pt,a4paper]{awesome-cv}
 \usepackage{awesome-cv-class-overrides} % Custom overrides for the awesome-cv class (see that file for details)
+
+% Suppress tiny overfull warnings (<3pt) from base class layout
+\hfuzz=3pt
+\vfuzz=3pt
+\hbadness=10000
 
 % Configuration
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}

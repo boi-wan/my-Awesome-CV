@@ -15,8 +15,8 @@
 }
 \ExplSyntaxOff
 
-% Change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+% Change the social information separator (narrowed slightly to prevent header overfull)
+\renewcommand{\acvHeaderSocialSep}{\hspace{3pt}\textbar\hspace{3pt}}
 
 \newcommand{\downlink}[1]{\href{#1}{\faDownload}}
 
@@ -85,7 +85,7 @@
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
-    \ifthenelse{\equal{#6}{}}{}{\\ \smallskip \footnotesize{\foreach \n in {#6}{\cvtagblue{\n}}}}
+    \ifthenelse{\equal{#6}{}}{}{\\  \multicolumn{2}{L{\textwidth}}{\smallskip \footnotesize{\foreach \n in {#6}{\cvtagblue{\n}}}}}
   \end{tabular*}%
 }
 
@@ -102,8 +102,8 @@
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
-    \ifthenelse{\equal{#6}{}}{}{\\ \smallskip \footnotesize{\foreach \n in {#6}{\cvtagblue{\n}}}}
-    \ifthenelse{\equal{#7}{}}{}{\\ \smallskip \footnotesize{\foreach \n in {#7}{\cvtagorange{\n}}}}
+    \ifthenelse{\equal{#6}{}}{}{\\  \multicolumn{2}{L{\textwidth}}{\smallskip \footnotesize{\foreach \n in {#6}{\cvtagblue{\n}}}}}
+    \ifthenelse{\equal{#7}{}}{}{\\  \multicolumn{2}{L{\textwidth}}{\smallskip \footnotesize{\foreach \n in {#7}{\cvtagorange{\n}}}}}
   \end{tabular*}%
 }
 
@@ -121,7 +121,7 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \\ \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}
-    \ifthenelse{\equal{#7}{}}{}{\\ \smallskip \footnotesize{\foreach \n in {#7}{\cvtag{\n}}}}
+    \ifthenelse{\equal{#7}{}}{}{\\  \multicolumn{2}{L{\textwidth}}{\smallskip \footnotesize{\foreach \n in {#7}{\cvtag{\n}}}}}
   \end{tabular*}%
 }
 
@@ -138,8 +138,8 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \bigskip \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}
-    \ifthenelse{\equal{#7}{}}{}{\\ \smallskip \footnotesize{\foreach \n in {#7}{\cvtagblue{\n}}}}
-    \ifthenelse{\equal{#8}{}}{}{\\ \smallskip \footnotesize{\foreach \n in {#8}{\cvtagorange{\n}}}}
+    \ifthenelse{\equal{#7}{}}{}{\\  \multicolumn{2}{L{\textwidth}}{\smallskip \footnotesize{\foreach \n in {#7}{\cvtagblue{\n}}}}}
+    \ifthenelse{\equal{#8}{}}{}{\\  \multicolumn{2}{L{\textwidth}}{\smallskip \footnotesize{\foreach \n in {#8}{\cvtagorange{\n}}}}}
   \end{tabular*}%
 }
 
