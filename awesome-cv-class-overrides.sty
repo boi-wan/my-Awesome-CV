@@ -6,7 +6,10 @@
 % Requires --shell-escape (set in the Makefile).
 \ExplSyntaxOn
 \NewDocumentCommand{\setfromenv}{mmm}{
-  \sys_get_shell:nnN { kpsewhich~--var-value~ #2 } {} \l_tmpa_tl
+  \sys_get_shell:nnN { kpsewhich~--var-value~#2 } {} \l_tmpa_tl
+  % When the variable is unset, kpsewhich can yield a newline; strip it.
+  \tl_trim_spaces:N \l_tmpa_tl
+  \tl_remove_all:Nn \l_tmpa_tl { \par }
   \tl_trim_spaces:N \l_tmpa_tl
   \tl_if_empty:NTF \l_tmpa_tl
     { \tl_set:Nn \l_tmpa_tl {#3} }
