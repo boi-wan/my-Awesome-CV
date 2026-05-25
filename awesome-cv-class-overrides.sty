@@ -24,11 +24,12 @@
 \newcommand{\downlink}[1]{\href{#1}{\faDownload}}
 \newcommand{\link}[1]{\href{#1}{\faLink}}
 
-% https://paletton.com/#uid=7040u0kr3rBgAzDlwtst6lXymh4
-\definecolor{tagorangefill}{HTML}{FFBB7B}
-\definecolor{tagorangetext}{HTML}{884200}
-\definecolor{tagbluefill}{HTML}{539BA8}
-\definecolor{tagbluetext}{HTML}{024754}
+% Tag palette coupled to the awesome-skyblue accent (#0395DE).
+% TikZ renders cvtag fills at !50 (50% mix with white), so the HEX below is the source — not the rendered shade.
+\definecolor{tagorangefill}{HTML}{FBB36B}
+\definecolor{tagorangetext}{HTML}{7A4400}
+\definecolor{tagbluefill}{HTML}{5BB5E5}
+\definecolor{tagbluetext}{HTML}{024B71}
 \newcommand{\tagstylecolor}[2]{{\fontsize{7.5pt}{1em}\bodyfontlight\color{#2} #1}}
 
 \newcommand{\cvtagorange}[1]{\cvtagcolor{#1}{tagorangefill}{tagorangetext}}
